@@ -1,5 +1,6 @@
 import {BrowserModule} from "@angular/platform-browser";
 import {NgModule} from "@angular/core";
+import { NgxPayPalModule } from "ngx-paypal";
 
 import {PackageService} from "./packages/package.service";
 import {AppComponent} from "./app.component";
@@ -21,6 +22,7 @@ import {DirectoryComponent} from "./directory/directory.component";
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
+		NgxPayPalModule,
 	],
 	providers: [
 		PackageService,

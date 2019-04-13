@@ -2,4 +2,5 @@
 
 <p>{{package?.description}}</p>
 
-<div id="premium-paypal-button" class="mt-10"></div>
+<!--<div id="premium-paypal-button" class="mt-10"></div>-->
+<ngx-paypal #paypal [config]="paypalConfig" [registerScript]="false"></ngx-paypal>

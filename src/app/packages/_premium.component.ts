@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output} from "@angular/core";
+import {AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild} from "@angular/core";
 import { untilDestroyed } from "ngx-take-until-destroy";
+import {NgxPaypalComponent} from "ngx-paypal";
 
 import {Package} from "./package.model";
 import {PackageService} from "./package.service";
@@ -13,6 +14,7 @@ declare let paypal: any;
 export class PremiumPackageComponent implements OnInit, AfterViewInit, OnDestroy {
 	package: Package;
 	@Output() onSuccess: EventEmitter<boolean>;
+	@ViewChild("paypal") paypalComponent?:  NgxPaypalComponent;
 
 	paypalConfig: any;
 
@@ -26,6 +28,8 @@ export class PremiumPackageComponent implements OnInit, AfterViewInit, OnDestroy
 			.subscribe((pack: Package) => {
 			this.package = pack;
 		});
+
+		this.paypalInit();
 	}
 
 	paypalInit() {
@@ -100,11 +104,12 @@ export class PremiumPackageComponent implements OnInit, AfterViewInit, OnDestroy
 			},
 		};
 
-		paypal.Buttons(this.paypalConfig).render("#premium-paypal-button");
+		this.paypalComponent.customInit(this.service.getPaypalApi());
+		// paypal.Buttons(this.paypalConfig).render("#premium-paypal-button");
 	}
 
 	ngAfterViewInit() {
-		this.paypalInit();
+		// this.paypalInit();
 	}
 
 	// This method must be present, even if empty.

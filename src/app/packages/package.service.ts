@@ -4,6 +4,14 @@ import {Observable, of} from "rxjs";
 
 @Injectable()
 export class PackageService {
+	private paypalApi: any;
+	setPaypalApi(api) {
+		this.paypalApi = api;
+	}
+	getPaypalApi() {
+		return this.paypalApi;
+	}
+
 	get(id: number): Observable<Package> {
 		switch (id) {
 			case 1:

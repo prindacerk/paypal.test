@@ -4436,6 +4436,13 @@ neo-async@^2.5.0, neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
+ngx-paypal@^5.0.0-beta.8:
+  version "5.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/ngx-paypal/-/ngx-paypal-5.0.0-beta.8.tgz#d89a91b026e9902765d6a064cbf89409f001affd"
+  integrity sha512-5A1bvGGEIOSRN+AmJGGzFDRCm7qSroCSDgcz5S0XGRbqo+N6p9VDQ2P4i1Milx7CpqM0GHGPHYYL1lA1wYyiPQ==
+  dependencies:
+    tslib "^1.9.0"
+
 ngx-take-until-destroy@^5.4.0:
   version "5.4.0"
   resolved "https://registry.yarnpkg.com/ngx-take-until-destroy/-/ngx-take-until-destroy-5.4.0.tgz#6c8606ee956584dc947e2eb609c48b8f98b09900"
